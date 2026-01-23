@@ -7,14 +7,17 @@ import { SERVER_URL } from "../config/env.js";
 
 export const sendReminders = serve(
   async (context) => {
-    console.log("🔥 WORKFLOW STARTED");
-
     const { subscriptionId } = await context.requestPayload;
     const subscription = await fetchSubscription(context, subscriptionId);
 
     if (!subscription || subscription.status !== "active") return;
 
     const renwalDate = dayjs(subscription.renwalDate);
+
+    if (!renwalDate.isValid()) {
+      console.log("invalid renewal date");
+      return;
+    }
     //If renewalDate has passed
     if (renwalDate.isBefore(dayjs())) {
       console.log(
@@ -26,10 +29,8 @@ export const sendReminders = serve(
     const REMINDERS = [14, 7, 3, 1];
 
     for (const daysBefore of REMINDERS) {
-      const reminderDate = dayjs(subscription.renwalDate).subtract(
-        daysBefore,
-        "day"
-      );
+      const reminderDate = renwalDate.subtract(daysBefore, "day");
+
       if (reminderDate.isAfter(dayjs())) {
         await sleepUntilReminder(
           context,
@@ -39,7 +40,7 @@ export const sendReminders = serve(
 
         await triggerReminder(
           context,
-          `reminder ${daysBefore} days before renewing subscription with if ${subscriptionId}`
+          `reminder ${daysBefore} days before renewing subscription with id ${subscriptionId}`
         );
       }
     }
@@ -57,8 +58,9 @@ const fetchSubscription = async (context, subscriptionId) => {
 };
 
 const sleepUntilReminder = async (context, label, date) => {
+  console.log(date.toISOString());
   console.log(`Sleeping unitl ${label} reminder at ${date}`);
-  return await context.sleepUntil(date.toDate());
+  return await context.sleepUntil(label, date.toDate());
 };
 
 const triggerReminder = async (context, label) => {
