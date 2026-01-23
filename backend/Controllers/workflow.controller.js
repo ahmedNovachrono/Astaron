@@ -12,7 +12,7 @@ export const sendReminders = serve(
 
     if (!subscription || subscription.status !== "active") return;
 
-    const renwalDate = dayjs(subscription.renwalDate);
+    const renwalDate = dayjs(subscription.renewalDate);
 
     if (!renwalDate.isValid()) {
       console.log("invalid renewal date");
