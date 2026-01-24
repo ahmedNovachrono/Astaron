@@ -39,12 +39,13 @@ export const sendReminders = serve(
           reminderDate
         );
       }
-
-      await triggerReminder(
-        context,
-        `${daysBefore} days before reminder`,
-        subscription
-      );
+      if (dayjs().isSame(reminderDate, "day")) {
+        await triggerReminder(
+          context,
+          `${daysBefore} days before reminder`,
+          subscription
+        );
+      }
     }
   },
   { url: `${SERVER_URL}/api/workflows/subscription/reminder` }
