@@ -22,7 +22,8 @@
     "mongodb": "^7.0.0",
     "mongoose": "^9.1.4",
     "morgan": "~1.9.1",
-    "nodemailer": "^7.0.12"
+    "nodemailer": "^7.0.12",
+    "openai": "^6.16.0"
   },
   "main": "app.js",
   "author": "",

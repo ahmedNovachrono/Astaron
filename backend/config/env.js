@@ -13,4 +13,5 @@ export const {
   QSTASH_URL,
   QSTASH_TOKEN,
   SERVER_URL,
+  AI_API_KEY,
 } = process.env;

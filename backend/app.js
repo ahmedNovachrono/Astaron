@@ -8,6 +8,7 @@ import errorMiddeleware from "./Middlewares/error.middleware.js";
 import cookieParser from "cookie-parser";
 import arcjetMiddleware from "./Middlewares/arcjet.middleware.js";
 import workflowRouter from "./routes/workflow.routes.js";
+import aiRoute from "./routes/ai.routes.js";
 
 const app = express();
 
@@ -24,6 +25,8 @@ app.use("/api/users", userRouter);
 app.use("/api/subscriptions", subscriptionRouter);
 //workfllow logics
 app.use("/api/workflows", workflowRouter);
+//Ai generating
+app.use("/api/ai/simplify", aiRoute);
 
 app.use(errorMiddeleware);
 

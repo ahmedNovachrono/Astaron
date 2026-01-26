@@ -36,6 +36,8 @@ export const signUp = async (req, res, next) => {
     await session.commitTransaction();
     session.endSession();
 
+    res.cookie("jwt", token, { maxAge: 100000 });
+
     res.status(201).json({
       succes: true,
       message: "User Created",
@@ -76,6 +78,8 @@ export const signIn = async (req, res, next) => {
     const token = jwt.sign({ userId: user._id }, JWT_SECRET, {
       expiresIn: JWT_EXPIRES_IN,
     });
+    res.cookie("jwt", token, { maxAge: 100000 });
+
     res.status(200).json({
       succes: true,
       token,
