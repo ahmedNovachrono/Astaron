@@ -1,16 +1,14 @@
-# React + Vite
+**Astaron**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is an AI learning assitant that help students with their stduies by simplifying the students document materials.
 
-Currently, two official plugins are available:
+**Features**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    Documents Simplification
+   This is the a feature where the user implement the document to simplify and **Astaron** generate short simple version includes the main topics in the document making it esier to read and under stand.
 
-## React Compiler
+    Flashcards Generator
+  This is where **Astaron** generate flashcards about the document the user selected including the hot and important information about the topic.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    Quizes Generator
+  Here **Astaron** generate a quiz for the user to test his understanding and based on the score telling the user where he is wron and what he should focus on revising and studying.
