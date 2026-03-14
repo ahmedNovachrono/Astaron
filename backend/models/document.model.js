@@ -6,7 +6,7 @@ const documentSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    docContent: {
+    simplifiedContent: {
       type: String,
       required: true,
     },

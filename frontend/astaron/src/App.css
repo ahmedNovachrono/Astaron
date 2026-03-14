@@ -1,0 +1,40 @@
+
+
+.card-title{
+    color: rgb(71, 71, 71);
+    transition: 300ms;
+}
+
+.card:hover .card-title{
+    color: #39FF14;
+}
+.card{
+    transition: 300ms;
+    border: 1px solid gray;
+    box-shadow: none;
+    
+}
+
+.card:hover{
+    border-color: #39FF14;
+    transform: scale(1.1);
+    box-shadow: 0 0 5px 0.02px #39FF14, 0 0 1px 1px #39FF14, 0 0 1px 1px #39FF14, 0 0 1px 1px #39FF14;
+}
+
+.ms-btn{
+    transform: scale(1);
+
+      
+}
+
+.ms-btn:hover{
+    transform: scale(1.1);
+}
+
+.add-doc{
+    transition: 300ms;
+}
+
+.add-doc:hover{
+    transform: scale(1.1);
+}

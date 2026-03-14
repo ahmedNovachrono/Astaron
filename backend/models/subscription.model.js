@@ -12,6 +12,14 @@ const subscriptionSchema = new mongoose.Schema(
       enum: ["active", "canceled", "expired"],
       default: "active",
     },
+    stripeCustomerId: {
+      type: String,
+      required: true,
+    },
+    stripeSubscribtionId: {
+      type: String,
+      required: true,
+    },
     price: {
       type: Number,
       required: true,

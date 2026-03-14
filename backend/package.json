@@ -23,7 +23,8 @@
     "mongoose": "^9.1.4",
     "morgan": "~1.9.1",
     "nodemailer": "^7.0.12",
-    "openai": "^6.16.0"
+    "openai": "^6.16.0",
+    "stripe": "^20.2.0"
   },
   "main": "app.js",
   "author": "",

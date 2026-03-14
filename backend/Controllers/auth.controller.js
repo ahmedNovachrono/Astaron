@@ -78,7 +78,6 @@ export const signIn = async (req, res, next) => {
     const token = jwt.sign({ userId: user._id }, JWT_SECRET, {
       expiresIn: JWT_EXPIRES_IN,
     });
-    res.cookie("jwt", token, { maxAge: 100000 });
 
     res.status(200).json({
       succes: true,
