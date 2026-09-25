@@ -1,4 +1,4 @@
-# AI Learning Platform Backend
+# AI Learning Platform Backend (STILL UNDER DEVELOPMENT)
 
 A backend system for an AI-powered learning platform that helps students transform complex educational content into simplified learning materials.
 
@@ -101,4 +101,4 @@ Designed and implemented:
 
 Ahmed Safy
 
-Computer Science student focused on backend development, cloud technologies, and AI-powered applications.
+Software Engineering student focused on backend development, cloud technologies, and AI-powered applications.
